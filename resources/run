@@ -6,6 +6,8 @@ if [ ! -d openhab/configurations ]; then
 	git config --global http.sslVerify false
 	git clone https://github.com/ronny-stauffer/yavanna-worben.git openhab/configurations
 	echo "...done."
+
+	sleep 3
 fi
 
 echo "Starting Mosquitto..."

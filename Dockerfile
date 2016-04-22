@@ -27,4 +27,4 @@ RUN chmod +x run openhab/start.sh
 #CMD ["bash"]
 CMD ["bash", "-c", "./run"]
 
-EXPOSE 1883 8080
+EXPOSE 1883 9123 1024 8080
