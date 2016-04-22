@@ -2,7 +2,10 @@
 FROM hypriot/rpi-java
 MAINTAINER Ronny Stauffer <ronny.stauffer@wir-entwickeln.ch>
 
+RUN ln -s -f /bin/bash /bin/sh
+
 # Install dependencies
+# (Deletes Debian package lists at the end.)
 RUN apt-get update && \
     apt-get install -y \
     git mosquitto mosquitto-clients \
