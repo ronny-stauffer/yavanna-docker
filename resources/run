@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Fetching configuration..."
+if [ ! -d /openhab/configuration ]; then
+	# See: http://derekmolloy.ie/fixing-git-and-curl-certificates-problem-on-beaglebone-blac/
+	git config --global http.sslVerify false
+	git clone https://github.com/ronny-stauffer/yavanna-worben.git openhab/configuration
+fi
+echo "...done."
+
+echo "Starting Mosquitto..."
+/etc/init.d/mosquitto start
+echo "...done."
+
+echo "Running openHAB..."
+openhab/start.sh
