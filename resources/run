@@ -2,12 +2,29 @@
 
 if [ ! -d openhab/configurations ]; then
 	echo "Fetching configuration..."
+
 	# See: http://derekmolloy.ie/fixing-git-and-curl-certificates-problem-on-beaglebone-blac/
 	git config --global http.sslVerify false
 	git clone https://github.com/ronny-stauffer/yavanna-worben.git openhab/configurations
+
 	echo "...done."
 
 	sleep 3
+	
+	pushd openhab/configurations
+	
+	echo "Apply configuration..."
+	
+	if [ ! -f apply ]; then
+		chmod +x apply
+		apply
+	fi
+	
+	echo "...done.
+	
+	sleep 3
+	
+	popd
 fi
 
 echo "Starting Mosquitto..."
