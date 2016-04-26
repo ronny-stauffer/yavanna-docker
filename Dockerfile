@@ -27,6 +27,6 @@ RUN chmod +x run openhab/start.sh
 #CMD ["bash"]
 CMD ["bash", "-c", "./run"]
 
-VOLUME /yavanna/openhab/configuration
+VOLUME /yavanna/openhab/configurations
 
 EXPOSE 1883 9123 1024 8080
