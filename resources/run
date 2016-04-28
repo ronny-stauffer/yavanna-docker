@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ ! -d openhab/configurations ]; then
+echo "Checking configuration..."
+# Check if openhab/configurations directory is empty
+if [ ! "$(ls -A openhab/configurations)" ]; then
 	echo "Fetching configuration..."
 
 	# See: http://derekmolloy.ie/fixing-git-and-curl-certificates-problem-on-beaglebone-blac/
@@ -20,7 +22,7 @@ if [ ! -d openhab/configurations ]; then
 		apply
 	fi
 	
-	echo "...done.
+	echo "...done."
 	
 	sleep 3
 	
