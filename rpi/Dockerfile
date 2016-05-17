@@ -29,4 +29,4 @@ CMD ["bash", "-c", "./run"]
 
 VOLUME /yavanna/openhab/configurations
 
-EXPOSE 1883 9123 1024 8080
+EXPOSE 1883 9123 49152 8080
