@@ -1,0 +1,3 @@
+> split --bytes=99M openhab.tar splitted/openhab.tar
+
+> cat splitted/openhab.tar* > openhab.tar
